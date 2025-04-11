@@ -18,15 +18,15 @@ const drawGame = ()=>{
     msg.style.backgroundColor = "darkgreen";
 }
 
-const showWinner = (userWin) => {
+const showWinner = (userWin,compChoice,userChoice) => {
     if(userWin){
         userScore++;
-        msg.innerText = "You win";
+        msg.innerText = `You Win computer choose: ${compChoice} user choose: ${userChoice}`;
         msg.style.backgroundColor = "green";
         userScoreParav.innerText = userScore;
     }else{
         compScore++;
-         msg.innerText = "You lose";
+         msg.innerText = `You Lose computer choose: ${compChoice} user choose: ${userChoice}`;
          compScoreParav.innerText = compScore;
          msg.style.backgroundColor = "red";
     }
@@ -47,7 +47,7 @@ const playGame = (userChoice) => {
         }else{
             userWin = compChoice === "paper"?true:false;
         }
-        showWinner(userWin);
+        showWinner(userWin,compChoice,userChoice);
     }
 };
 
